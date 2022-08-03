@@ -1,25 +1,9 @@
-import json
 import numpy as np
-import csv
+from FlavorGraph.module.util import *
 
 
 def sim(a, b):
     return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
-
-
-def read_json(filename):
-    with open(filename, "rb") as f:
-        data = json.load(f)
-
-    return data
-
-
-def read_csv(filename):
-    f = open(filename, 'r', encoding='utf-8')
-    rdr = csv.reader(f)
-    next(rdr)
-
-    return rdr
 
 
 def generate_ing_data(data):
