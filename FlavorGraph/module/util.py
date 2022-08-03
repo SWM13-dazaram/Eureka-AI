@@ -19,4 +19,4 @@ def read_csv(filename):
 
 def make_json(filename, data):
     with open(filename, 'w', encoding='utf-8') as f:
-        json.dump(data, f)
+        json.dump(data, f, ensure_ascii=False)
