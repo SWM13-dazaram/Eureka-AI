@@ -1,25 +1,9 @@
-import json
 import numpy as np
-import csv
+from FlavorGraph.module.util import *
 
 
 def sim(a, b):
     return np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b))
-
-
-def read_json(filename):
-    with open(filename, "rb") as f:
-        data = json.load(f)
-
-    return data
-
-
-def read_csv(filename):
-    f = open(filename, 'r', encoding='utf-8')
-    rdr = csv.reader(f)
-    next(rdr)
-
-    return rdr
 
 
 def generate_ing_data(data):
@@ -44,7 +28,7 @@ def calc_cos_sim(data):
 
 if __name__ == "__main__":
     vec_data = read_json("../viewPickle/csp_layer.json")
-    node_data = read_csv("../../input/nodes_191120.csv")
+    node_data = read_csv("../../input/example/nodes_191120.csv")
     ing_data = generate_ing_data(node_data)
 
     target = input("select ingredient ID : ")
@@ -52,8 +36,20 @@ if __name__ == "__main__":
 
     cos_sim = calc_cos_sim(vec_data)
 
-    print("similar ingredient")
-    print("ID : " + str(np.argmax(cos_sim)))
-    print("similarity : " + str(np.max(cos_sim)))
-    print("name : " + ing_data[str(np.argmax(cos_sim))][0])
-    print("type : " + ing_data[str(np.argmax(cos_sim))][1])
+    print("=======================================================")
+    print("Selected Ingredient")
+    print(f"ID : {target}")
+    print(f"Name : {ing_data[str(target)][0]}")
+    print(f"Type : {ing_data[str(target)][1]}")
+    print("=======================================================")
+
+    print()
+
+    print("=======================================================")
+    print("Similar Ingredient")
+    print(f"ID : {str(np.argmax(cos_sim))}")
+    print(f"Name : {ing_data[str(np.argmax(cos_sim))][0]}")
+    print(f"Type : {ing_data[str(np.argmax(cos_sim))][1]}")
+    print()
+    print(f"Similarity : {str(np.max(cos_sim))}")
+    print("=======================================================")
