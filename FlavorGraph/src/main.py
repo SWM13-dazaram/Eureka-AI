@@ -41,12 +41,12 @@ def main():
     """
     3. Plot your embedding if you like
     """
-    plot_embedding(args, graph)
+    # plot_embedding(args, graph)
 
     """
     4. Evaluate Node Classification & Node Clustering
     """
-    evaluate(args, graph)
+    # evaluate(args, graph)
 
 if __name__ == "__main__":
     main()
