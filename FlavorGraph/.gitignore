@@ -120,3 +120,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+/module/preprocessing/Asite/
+./.idea/
+/module/preprocessing/result/
+/input/example/
+/.idea/
