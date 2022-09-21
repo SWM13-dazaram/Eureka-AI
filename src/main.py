@@ -8,6 +8,7 @@ from plotter import plot_embedding
 
 import os
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
+os.environ['KMP_DUPLICATE_LIB_OK']='True'
 
 
 def main():
@@ -47,6 +48,7 @@ def main():
     4. Evaluate Node Classification & Node Clustering
     """
     # evaluate(args, graph)
+
 
 if __name__ == "__main__":
     main()
