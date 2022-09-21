@@ -83,3 +83,4 @@ fabric.properties
 /module/viewPickle/csp_layer.json
 /input/node2fp_revised_1120.pickle
 /output/FlavorGraph+CSL-embedding_M11-metapath_300-dim_0.0025-initial_lr_3-window_size_1-iterations_5-min_count-_True-isCSP_0.0001-CSPcoef_CSPLayer.pickle
+.idea
